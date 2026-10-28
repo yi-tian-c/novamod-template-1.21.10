@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "novamod:block/infection_barrier_block"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "novamod:block/nova_block"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "novamod:block/restore_transition_block"
+  }
+}

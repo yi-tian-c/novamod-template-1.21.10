@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "novamod:block/infection_barrier_block"
+    }
+  }
+}
