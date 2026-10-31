@@ -32,6 +32,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.RESTORE_TRANSITION_BLOCK);
                         entries.add(ModItems.SOUL_ITEM);
                         entries.add(ModBlocks.NOVA_BLOCK);
+                        entries.add(ModItems.BLACK_CUBE);
                         // 添加自己的物品，例如：
                         // entries.add(ModItems.TEST_ITEM);
                     })

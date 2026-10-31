@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "novamod:item/black_cube_item",
+    "model": {
+      "type": "geckolib:geckolib"
+    }
+  }
+}

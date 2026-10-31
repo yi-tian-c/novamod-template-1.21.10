@@ -1,5 +1,7 @@
 {
+  "block.novamod.infection_block": "侵蚀方块 危险！！！",
   "entity.novamod.shadow": "黑影",
+  "item.novamod.black_cube_item": "记忆方块",
   "itemGroup.novamod": "NovaMod",
   "key.novamod.open_text_animation": "打开文字动画管理器"
 }

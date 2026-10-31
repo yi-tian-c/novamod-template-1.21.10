@@ -1,6 +1,7 @@
 package me.nova.datagen;
 
 import me.nova.registry.ModBlocks;
+import me.nova.registry.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.registry.RegistryWrapper;
@@ -31,5 +32,6 @@ public class NovaLanguageProvider extends FabricLanguageProvider {
 
         // 实体翻译
         translationBuilder.add("entity.novamod.shadow", "黑影");
+        translationBuilder.add(ModItems.BLACK_CUBE, "记忆方块");
     }
 }

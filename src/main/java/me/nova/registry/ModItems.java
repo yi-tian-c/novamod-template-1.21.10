@@ -1,6 +1,7 @@
 package me.nova.registry;
 
 import me.nova.NovaMod;
+import me.nova.item.BlackCubeItem;
 import me.nova.item.SoulItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -16,6 +17,11 @@ public class ModItems {
             "soul",
             SoulItem::new,
             new Item.Settings()
+    );
+    public static final Item BLACK_CUBE = register(
+            "black_cube_item",
+            BlackCubeItem::new,
+            new Item.Settings().maxCount(1)
     );
     /**
      * 注册物品

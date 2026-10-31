@@ -1,10 +1,16 @@
 package me.nova.entity;
 
+import me.nova.registry.ModItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Arm;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -90,5 +96,32 @@ public class BlackCubeEntity extends LivingEntity implements GeoEntity {
     @Override
     public void pushAwayFrom(Entity entity) {
         // 不被其他实体推挤
+    }
+    @Override
+    public boolean damage(ServerWorld world, DamageSource source, float amount) {
+        // 只响应玩家的攻击
+        if (source.getAttacker() instanceof PlayerEntity player) {
+            // 服务端生成掉落物，避免客户端重复生成
+            if (!world.isClient()) {
+                ItemStack stack = new ItemStack(ModItems.BLACK_CUBE);
+
+                ItemEntity itemEntity = new ItemEntity(
+                        world,
+                        this.getX(),
+                        this.getY(),
+                        this.getZ(),
+                        stack
+                );
+
+                world.spawnEntity(itemEntity);
+
+                // 移除黑色立方体实体
+                this.discard();
+            }
+
+            return true;
+        }
+
+        return super.damage(world, source, amount);
     }
 }

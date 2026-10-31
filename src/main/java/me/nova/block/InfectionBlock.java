@@ -4,6 +4,7 @@ import me.nova.registry.ModBlocks;
 import me.nova.util.InfectionOriginalState;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
@@ -75,10 +76,11 @@ public class InfectionBlock extends Block {
                 continue;
             }
 
-            // 侵蚀前记录原始方块状态和方块实体数据
-            InfectionOriginalState.get(world)
-                    .saveOriginal(world, target, targetState);
-
+            // 浮冰不保存原始状态
+            if (!targetState.isOf(Blocks.PACKED_ICE)) {
+                InfectionOriginalState.get(world)
+                        .saveOriginal(world, target, targetState);
+            }
             world.setBlockState(
                     target,
                     ModBlocks.INFECTION_BLOCK.getDefaultState(),
