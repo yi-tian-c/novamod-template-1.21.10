@@ -28,4 +28,8 @@ public class BlackCubeEntityRenderer<
     ) {
         return RenderLayer.getEntityTranslucent(texture);
     }
+    @Override
+    public boolean hasLabel(BlackCubeEntity entity, double squaredDistanceToCamera) {
+        return false;
+    }
 }

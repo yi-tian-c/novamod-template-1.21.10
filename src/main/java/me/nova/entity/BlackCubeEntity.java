@@ -40,6 +40,11 @@ public class BlackCubeEntity extends LivingEntity implements GeoEntity {
                 .add(EntityAttributes.MAX_HEALTH, 10.0);
     }
     @Override
+    public boolean shouldRenderName() {
+        return false;
+    }
+
+    @Override
     public void tick() {
         super.tick();
         // 持续关闭重力，确保实体能够悬浮

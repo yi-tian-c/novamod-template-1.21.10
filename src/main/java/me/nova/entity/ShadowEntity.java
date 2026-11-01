@@ -31,6 +31,10 @@ public class ShadowEntity extends LivingEntity implements GeoEntity {
         super(entityType, world);
     }
     @Override
+    public boolean shouldRenderName() {
+        return false;
+    }
+    @Override
     public void tick() {
         super.tick();
 

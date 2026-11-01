@@ -76,7 +76,7 @@ public class InfectionBlock extends Block {
                     world.setBlockState(
                             pos,
                             state.with(ACTIVE, false),
-                            Block.NOTIFY_LISTENERS
+                            Block.NOTIFY_LISTENERS| Block.FORCE_STATE
                     );
 
                     return;
@@ -87,7 +87,7 @@ public class InfectionBlock extends Block {
             world.setBlockState(
                     pos,
                     state.with(AGE, 0),
-                    Block.NOTIFY_LISTENERS
+                    Block.NOTIFY_LISTENERS| Block.FORCE_STATE
             );
 
         } else {
@@ -95,7 +95,7 @@ public class InfectionBlock extends Block {
             world.setBlockState(
                     pos,
                     state.with(AGE, state.get(AGE) + 1),
-                    Block.NOTIFY_LISTENERS
+                    Block.NOTIFY_LISTENERS|Block.FORCE_STATE
             );
         }
 
@@ -123,7 +123,7 @@ public class InfectionBlock extends Block {
             world.setBlockState(
                     target,
                     ModBlocks.INFECTION_BLOCK.getDefaultState(),
-                    Block.NOTIFY_ALL
+                    Block.NOTIFY_LISTENERS | Block.FORCE_STATE
             );
 
             infected = true;

@@ -1,5 +1,6 @@
 package me.nova.client.renderer;
 
+import me.nova.entity.BlackCubeEntity;
 import me.nova.entity.ShadowEntity;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
@@ -23,6 +24,10 @@ public class ShadowEntityRenderer<
         super(context, entityType);
 
         this.shadowRadius = 0.3F;
+    }
+    @Override
+    public boolean hasLabel(ShadowEntity entity, double squaredDistanceToCamera) {
+        return false;
     }
     @Override
     public int getRenderColor(
