@@ -8,6 +8,10 @@ import me.nova.registry.ModBlocks;
 import me.nova.registry.ModEntities;
 import me.nova.registry.ModKeyBindings;
 import me.nova.util.OrbitBeePayload;
+import me.nova.client.BlackCubeEffect;
+import me.nova.client.particle.BlackSmokeParticleFactory;
+import me.nova.particle.ModParticles;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
@@ -31,6 +35,8 @@ public class NovaModClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+        BlackCubeEffect.register();
+        ParticleFactoryRegistry.getInstance().register(ModParticles.BLACK_SMOKE, BlackSmokeParticleFactory::new);
         EntityRendererRegistry.register(
                 ModEntities.SHADOW,
                 context -> new ShadowEntityRenderer<>(

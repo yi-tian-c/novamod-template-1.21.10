@@ -6,6 +6,10 @@
     "ExampleMixin",
     "NoDaylightBurnMixin"
   ],
+  "client": [
+    "BlackCubeWorldRendererMixin",
+    "BlackCubeGameRendererMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   },
